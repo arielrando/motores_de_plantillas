@@ -1,0 +1,28 @@
+doctype html
+html
+  include layouts/index.pug
+  body
+    div(class="row" style="height:50px;")
+      if product
+        h2='Modificar producto'
+      else
+        h2='Agregar producto'
+    div(class="row")
+      div(class="col-sm-12 px-md-5")
+        form(action="agregar" method="POST")
+          label(for="title")='Titulo:'
+          br
+          input(type="text" id="title" name="title")
+          br
+          label(for="price")='Precio:'
+          br
+          input(type="number" id="price" name="price")
+          br
+          label(for="thumbnail")='Thumbnail:'
+          br
+          input(type="text" id="thumbnail" name="thumbnail")
+          br
+          br
+          button(class="btn btn-primary btn-sm active" name="submit" value="S" type="submit")='Crear'
+        br
+        a(href="/" class="btn btn-dark btn-sm active" role="button" aria-pressed="true")='Volver'
